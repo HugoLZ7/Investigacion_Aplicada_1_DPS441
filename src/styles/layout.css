@@ -1,0 +1,16 @@
+/* Contenedor principal tipo app móvil */
+.app-wrapper {
+  max-width: 420px;
+  margin: auto;
+  min-height: 100vh;
+  background: #f4f6f9;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Adaptación para móviles reales */
+@media (max-width: 480px) {
+  .app-wrapper {
+    max-width: 100%;
+    box-shadow: none;
+  }
+}
