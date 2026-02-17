@@ -1,4 +1,8 @@
 import { createContext, useState } from "react";
+import laptopImg from "../assets/laptop.jpg";
+import proyectorImg from "../assets/proyector.jpg";
+import tabletImg from "../assets/tablet.jpg";
+
 
 // Crear contexto
 export const AppContext = createContext();
@@ -15,17 +19,17 @@ export function AppProvider({ children }) {
     {
       nombre: "Laptop Dell",
       stock: 3,
-      img: "https://cdn-icons-png.flaticon.com/512/2920/2920277.png",
+      img: laptopImg,
     },
     {
       nombre: "Proyector Epson",
       stock: 1,
-      img: "https://cdn-icons-png.flaticon.com/512/3659/3659899.png",
+      img: proyectorImg,
     },
     {
       nombre: "Tablet Samsung",
       stock: 2,
-      img: "https://cdn-icons-png.flaticon.com/512/888/888879.png",
+      img: tabletImg,
     },
   ]);
 
@@ -66,13 +70,19 @@ export function AppProvider({ children }) {
     );
 
     // Agregar al historial
+    const ahora = new Date();
+
     const nuevoPrestamo = {
       id: Date.now(),
       nombre: nombreEquipo,
       img: equipo.img,
-      fecha: new Date().toLocaleDateString(),
+      fecha: ahora.toLocaleString("es-SV", {
+        dateStyle: "short",
+        timeStyle: "medium",
+      }),
       usuario: user?.nombre,
     };
+
 
     setHistorial((prev) => [...prev, nuevoPrestamo]);
   };
@@ -92,10 +102,15 @@ export function AppProvider({ children }) {
     );
 
     // Registrar devolución
+    // Registrar devolución
     const registro = {
       ...prestamo,
-      fechaDevolucion: new Date().toLocaleDateString(),
+      fechaDevolucion: new Date().toLocaleString("es-SV", {
+        dateStyle: "short",
+        timeStyle: "medium",
+      }),
     };
+
 
     setDevoluciones((prev) => [...prev, registro]);
 
