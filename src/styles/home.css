@@ -1,0 +1,96 @@
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.navbar h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+}
+
+.nav-links span {
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.nav-links span:hover {
+  text-decoration: underline;
+}
+
+/* CONTENEDOR */
+.home-container {
+  padding: 20px;
+}
+
+.welcome {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #333;
+}
+
+/* GRID DE EQUIPOS */
+.equipos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.equipo-card {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.equipo-card:hover {
+  transform: translateY(-5px);
+}
+
+.equipo-img {
+  width: 70px;
+  margin-bottom: 10px;
+}
+
+.stock {
+  font-size: 14px;
+  margin: 5px 0 10px;
+  color: #555;
+}
+
+.stock span {
+  font-weight: bold;
+}
+
+.btn-reservar {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 12px;
+  background: #1e3c72;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-reservar:hover {
+  background: #16325c;
+}
+
+.btn-disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
