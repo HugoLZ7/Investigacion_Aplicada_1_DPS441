@@ -1,4 +1,4 @@
-📦 LabStock
+# 📦 LabStock
 
 Sistema web para la gestión de préstamos de equipos de laboratorio.
 
@@ -34,12 +34,12 @@ CSS
 
 Clonar el repositorio:
 
-git clone https://github.com/TU-USUARIO/labstock.git
+git clone https://github.com/HugoLZ7/Investigacion_Aplicada_1_DPS441.git
 
 
 Entrar al proyecto:
 
-cd labstock
+cd labstock-app
 
 
 Instalar dependencias:
