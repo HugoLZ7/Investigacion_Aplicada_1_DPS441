@@ -1,10 +1,10 @@
-# 📦 LabStock
+# LabStock
 
 Sistema web para la gestión de préstamos de equipos de laboratorio.
 
 Permite registrar usuarios, iniciar sesión, reservar equipos, ver historial de préstamos y registrar devoluciones.
 
-# 🚀 Tecnologías utilizadas
+# Tecnologías utilizadas
 
 React
 
@@ -14,23 +14,23 @@ Context API
 
 CSS
 
-# 📌 Funcionalidades
+# Funcionalidades
 
-✅ Registro de usuarios
+Registro de usuarios
 
-✅ Inicio de sesión
+Inicio de sesión
 
-✅ Reserva de equipos con control de stock
+Reserva de equipos con control de stock
 
-✅ Historial de préstamos
+Historial de préstamos
 
-✅ Registro de devoluciones
+Registro de devoluciones
 
-✅ Actualización automática de inventario
+Actualización automática de inventario
 
-✅ Modo oscuro
+Modo oscuro
 
-# 🖥️ Instalación y ejecución
+# Instalación y ejecución
 
 Clonar el repositorio:
 
