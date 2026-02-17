@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
 import Footer from "../components/Footer";
@@ -8,6 +8,12 @@ import "../styles/home.css";
 function Home() {
     const navigate = useNavigate();
     const { user, equipos, registrarPrestamo, setUser } = useContext(AppContext);
+
+    useEffect(() => {
+        if (!user) {
+            navigate("/login");
+        }
+    }, [user, navigate]);
 
     const reservar = (nombre) => {
         const confirmar = window.confirm(
@@ -25,14 +31,10 @@ function Home() {
         navigate("/login");
     };
 
-    if (!user) {
-        navigate("/login");
-        return null;
-    }
+    if (!user) return null; // 👈 solo evita render mientras redirige
 
     return (
         <>
-            {/* NAVBAR */}
             <div className="navbar">
                 <h2>LabStock</h2>
                 <div className="nav-links">
@@ -42,7 +44,6 @@ function Home() {
                 </div>
             </div>
 
-            {/* CONTENIDO */}
             <div className="home-container">
                 <h3 className="welcome">
                     Bienvenido, {user.nombre} 👋
@@ -70,6 +71,7 @@ function Home() {
                     ))}
                 </div>
             </div>
+
             <Footer />
         </>
     );
