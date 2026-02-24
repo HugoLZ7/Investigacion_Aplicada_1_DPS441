@@ -13,8 +13,23 @@ function Register() {
   const [password, setPassword] = useState("");
 
   const registrar = () => {
+    // Validar campos vacíos
     if (!nombre || !carnet || !telefono || !password) {
       alert("Complete todos los campos");
+      return;
+    }
+
+    // 🔹 Validar nombre (solo letras y espacios)
+    const nombreRegex = /^[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+$/;
+    if (!nombreRegex.test(nombre)) {
+      alert("El nombre solo debe contener letras y espacios");
+      return;
+    }
+
+    // 🔹 Validar teléfono (exactamente 8 dígitos)
+    const telefonoRegex = /^\d{8}$/;
+    if (!telefonoRegex.test(telefono)) {
+      alert("El teléfono debe tener exactamente 8 dígitos numéricos");
       return;
     }
 
@@ -61,7 +76,12 @@ function Register() {
             type="text"
             placeholder="Teléfono"
             value={telefono}
-            onChange={(e) => setTelefono(e.target.value)}
+            maxLength={8}
+            onChange={(e) => {
+              // Solo permitir números y máximo 8 dígitos
+              const valor = e.target.value.replace(/\D/g, "").slice(0, 8);
+              setTelefono(valor);
+            }}
           />
         </div>
 

@@ -1,36 +1,52 @@
-/* NAVBAR */
+/* ===== NAVBAR MODERNO ===== */
 .navbar {
   width: 100%;
   background: linear-gradient(135deg, #1e3c72, #2a5298);
+  backdrop-filter: blur(6px);
   color: white;
-  padding: 15px 25px;
+  padding: 18px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   box-sizing: border-box;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .navbar h2 {
   margin: 0;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .nav-links {
   display: flex;
-  gap: 20px;
+  gap: 25px;
   font-size: 15px;
+  font-weight: 500;
   flex-wrap: wrap;
 }
 
 .nav-links span {
   cursor: pointer;
-  transition: 0.2s;
+  position: relative;
+  transition: 0.3s ease;
 }
 
-.nav-links span:hover {
-  text-decoration: underline;
+.nav-links span::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: white;
+  transition: 0.3s ease;
+}
+
+.nav-links span:hover::after {
+  width: 100%;
 }
 
 /* Responsive navbar */
@@ -39,6 +55,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
+    padding: 15px 20px;
   }
 
   .nav-links {
@@ -48,67 +65,106 @@
 }
 
 
-/* CONTENEDOR */
+/* ===== CONTENEDOR ===== */
 .home-container {
-  padding: 20px;
+  padding: 25px 40px;
+  flex: 1;
 }
 
 .welcome {
-  margin-bottom: 20px;
-  font-size: 18px;
-  color: #333;
+  margin-bottom: 25px;
+  font-size: 20px;
+  color: #1e3c72;
+  font-weight: 600;
 }
 
-/* GRID DE EQUIPOS */
+
+/* ===== GRID DE EQUIPOS ===== */
 .equipos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
 }
 
+
+/* ===== CARD MEJORADA ===== */
 .equipo-card {
-  background: white;
-  border-radius: 20px;
-  padding: 20px;
+  background: linear-gradient(145deg, #ffffff, #f0f2f7);
+  border-radius: 22px;
+  padding: 25px;
   text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  transition: 0.3s;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .equipo-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
+
+/* Imagen del equipo */
 .equipo-img {
-  width: 70px;
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
   margin-bottom: 10px;
 }
 
+
+/* Nombre equipo */
+.equipo-card h4 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+  color: #1e3c72;
+}
+
+
+/* Stock badge */
 .stock {
   font-size: 14px;
-  margin: 5px 0 10px;
+  margin: 8px 0 18px;
   color: #555;
 }
 
 .stock span {
+  background: #e6ecff;
+  color: #1e3c72;
+  padding: 4px 12px;
+  border-radius: 20px;
   font-weight: bold;
 }
 
+
+/* Botón moderno */
 .btn-reservar {
-  padding: 10px 15px;
+  padding: 10px 20px;
   border: none;
   border-radius: 12px;
-  background: #1e3c72;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
   color: white;
+  font-weight: 500;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.25s ease;
 }
 
 .btn-reservar:hover {
-  background: #16325c;
+  transform: scale(1.08);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
 }
 
 .btn-disabled {
-  background: #aaa;
+  background: #bbb;
   cursor: not-allowed;
+  box-shadow: none;
+}
+
+
+/* ===== FIX FOOTER ABAJO ===== */
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
